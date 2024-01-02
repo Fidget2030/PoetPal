@@ -1,4 +1,4 @@
-package com.example.poetpal.ui
+package com.poetpal.navigation
 
 import androidx.annotation.StringRes
 import com.example.poetpal.R
@@ -6,7 +6,8 @@ import com.example.poetpal.R
 enum class PoetPalScreens(
     @StringRes val title: Int,
 ) {
-    Welcome(title = R.string.welcome),
+    Home(title = R.string.home),
     Write(title = R.string.write),
     Read(title = R.string.read),
+    Dictionary(title = R.string.dict),
 }

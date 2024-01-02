@@ -1,4 +1,4 @@
-package com.example.poetpal
+package com.poetpal
 
 import org.junit.Test
 
