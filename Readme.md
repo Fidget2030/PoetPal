@@ -17,7 +17,8 @@ splash screen?
 
 login?
 
-links
+links  
+
 [Kanban](https://fidget2030.kanbantool.com/b/1018957-poet-pal#?)  
 
 [Figma](https://www.figma.com/file/3JX4nnQx7dOePENrn0jEdc/Poet-Pal?type=design&node-id=54695-114&mode=design&t=L6uJ0UxpABSwovrk-0)  
