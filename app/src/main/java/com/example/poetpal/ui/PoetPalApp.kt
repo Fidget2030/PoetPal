@@ -1,4 +1,4 @@
-package com.poetpal.ui
+package com.example.poetpal.ui
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -20,15 +20,15 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.poetpal.navigation.PoetPalScreens
-import com.poetpal.navigation.navBarComposables.PoetBottomBar
-import com.poetpal.navigation.navBarComposables.PoetTopBar
-import com.poetpal.ui.screens.AboutSidePanel
-import com.poetpal.ui.screens.DictionaryScreen
-import com.poetpal.ui.screens.HomeScreen
-import com.poetpal.ui.screens.ReadingScreen
-import com.poetpal.ui.screens.WritingScreen
-import com.poetpal.ui.theme.PoetPalTheme
+import com.example.poetpal.navigation.PoetPalScreens
+import com.example.poetpal.navigation.navBarComposables.PoetBottomBar
+import com.example.poetpal.navigation.navBarComposables.PoetTopBar
+import com.example.poetpal.ui.screens.AboutSidePanel
+import com.example.poetpal.ui.screens.DictionaryScreen
+import com.example.poetpal.ui.screens.HomeScreen
+import com.example.poetpal.ui.screens.ReadingScreen
+import com.example.poetpal.ui.screens.WritingScreen
+import com.example.poetpal.ui.theme.PoetPalTheme
 import kotlinx.coroutines.launch
 
 @Suppress("ktlint:standard:function-naming")

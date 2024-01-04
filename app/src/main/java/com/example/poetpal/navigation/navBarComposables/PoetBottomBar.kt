@@ -1,4 +1,4 @@
-package com.poetpal.navigation.navBarComposables
+package com.example.poetpal.navigation.navBarComposables
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Create

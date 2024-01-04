@@ -1,4 +1,5 @@
-package com.poetpal.ui.theme
+package com.example.poetpal.ui.theme
+
 import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -85,8 +86,8 @@ fun PoetPalTheme(
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
     content:
-        @Composable
-            () -> Unit,
+    @Composable
+        () -> Unit,
 ) {
     val colorScheme =
         when {

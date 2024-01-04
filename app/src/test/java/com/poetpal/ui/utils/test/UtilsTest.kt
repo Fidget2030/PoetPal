@@ -1,6 +1,6 @@
 package com.poetpal.ui.utils.test
 
-import com.poetpal.ui.utils.limerick
+import com.example.poetpal.ui.utils.limerick
 import org.junit.Assert.assertThrows
 import org.junit.Assert.fail
 import org.junit.Test

@@ -1,4 +1,4 @@
-package com.poetpal.ui.screens
+package com.example.poetpal.ui.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -16,9 +16,9 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.poetpal.ui.theme.PoetPalTheme
-import com.poetpal.ui.utils.Poem
-import com.poetpal.ui.utils.limerick
+import com.example.poetpal.ui.theme.PoetPalTheme
+import com.example.poetpal.ui.utils.Poem
+import com.example.poetpal.ui.utils.limerick
 
 @Suppress("ktlint:standard:function-naming")
 @Composable

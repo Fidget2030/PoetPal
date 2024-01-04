@@ -1,4 +1,5 @@
-package com.poetpal.ui.theme
+package com.example.poetpal.ui.theme
+
 import androidx.compose.ui.graphics.Color
 
 val primaryLight = Color(0xFF4B662C)

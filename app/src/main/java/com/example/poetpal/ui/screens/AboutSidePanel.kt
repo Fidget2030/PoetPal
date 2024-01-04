@@ -1,4 +1,4 @@
-package com.poetpal.ui.screens
+package com.example.poetpal.ui.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.icons.Icons
@@ -19,10 +19,10 @@ fun AboutSidePanel(toggleSidePanel: () -> Unit) {
     Column {
         CenterAlignedTopAppBar(
             colors =
-                TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer,
-                    titleContentColor = MaterialTheme.colorScheme.primary,
-                ),
+            TopAppBarDefaults.topAppBarColors(
+                containerColor = MaterialTheme.colorScheme.primaryContainer,
+                titleContentColor = MaterialTheme.colorScheme.primary,
+            ),
             title = { Text("Help") },
             actions = {
                 IconButton(onClick = toggleSidePanel) {
@@ -32,14 +32,14 @@ fun AboutSidePanel(toggleSidePanel: () -> Unit) {
         )
         Text(
             text =
-                """Poetry is set apart from other forms of literature in how it plays with language.
+            """Poetry is set apart from other forms of literature in how it plays with language.
                 |Some forms of poetry are very free-flowing, and showcast creative uses,
                 |but this can be challenging for someone just beginning. 
                 |"Blank Page Syndrome" refers to the problem many have with having too much freedom,
                 | and not knowing where to begin.
                 |Some more structured forms of poetry can help you on your way, and stimulate you to think creatively.
             """
-                    .trimMargin(),
+                .trimMargin(),
         )
     }
 }

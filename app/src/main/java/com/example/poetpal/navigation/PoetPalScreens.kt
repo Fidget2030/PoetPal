@@ -1,4 +1,4 @@
-package com.poetpal.navigation
+package com.example.poetpal.navigation
 
 import androidx.annotation.StringRes
 import com.example.poetpal.R

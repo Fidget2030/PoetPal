@@ -8,7 +8,7 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.navigation.compose.ComposeNavigator
 import androidx.navigation.testing.TestNavHostController
-import com.poetpal.ui.PoetPalApp
+import com.example.poetpal.ui.PoetPalApp
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test

@@ -1,4 +1,4 @@
-package com.poetpal.ui.utils
+package com.example.poetpal.ui.utils
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.CardDefaults
