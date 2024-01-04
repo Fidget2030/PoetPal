@@ -12,11 +12,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.poetpal.ui.Utils.Limerick
-import com.poetpal.ui.Utils.Poem
 import com.poetpal.ui.theme.PoetPalTheme
+import com.poetpal.ui.utils.Poem
+import com.poetpal.ui.utils.limerick
 
 @Suppress("ktlint:standard:function-naming")
 @Composable
@@ -46,10 +48,10 @@ fun HomeScreen(
 
     Column(
         modifier =
-            Modifier
-                .fillMaxSize()
-                .padding(10.dp)
-                .verticalScroll(rememberScrollState()),
+        Modifier
+            .fillMaxSize()
+            .padding(10.dp)
+            .verticalScroll(rememberScrollState()),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Poem(
@@ -65,16 +67,19 @@ fun HomeScreen(
 
         Text(
             text =
-"""A limerick has 5 lines.
+            """A limerick has 5 lines.
 The lines rhyme according to an AABBA scheme.
 Lines 1,2 and 5 are an anapestic trimeter,
 lines 3 and 4 are an anapestic dimeter
 slight variation is allowed
-""".trimMargin(),
+                """.trimMargin(),
         )
         Spacer(modifier = Modifier.padding(20.dp))
 
-        Limerick(lines = lines, meter = meter, extraMeter = meterVariance, rhymes = rhymes)
+        Text(
+            limerick(lines = lines, meter = meter, extraMeter = meterVariance, rhymes = rhymes),
+            style = TextStyle(fontFamily = FontFamily.Monospace),
+        )
         Button(onClick = goToWrite) {
             Text(text = "Write your own!") //
         }

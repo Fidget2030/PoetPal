@@ -25,10 +25,10 @@ fun PoetTopBar(
 ) {
     CenterAlignedTopAppBar(
         colors =
-            topAppBarColors(
-                containerColor = MaterialTheme.colorScheme.primaryContainer,
-                titleContentColor = MaterialTheme.colorScheme.primary,
-            ),
+        topAppBarColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer,
+            titleContentColor = MaterialTheme.colorScheme.primary,
+        ),
         title = { Text(stringResource(id = currentScreenTitle)) },
         navigationIcon = {
             if (canNavigateBack) {
@@ -39,7 +39,7 @@ fun PoetTopBar(
                 IconButton(onClick = toggleSidePanel) {
                     Icon(
                         painter = painterResource(id = R.drawable.circle_question_solid_xl),
-                        contentDescription = "Open about side panel",
+                        contentDescription = "Open side panel",
                     )
                 }
             }
