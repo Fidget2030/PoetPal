@@ -5,9 +5,10 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [dbSetting::class], version = 1, exportSchema = false)
+@Database(entities = [dbSetting::class, dbPoem::class], version = 1, exportSchema = false)
 abstract class PoetPalDb : RoomDatabase() {
     abstract fun settingDao(): SettingDao
+    abstract fun poemDao(): PoemDao
 
     companion object {
         @Suppress("ktlint:standard:property-naming")
