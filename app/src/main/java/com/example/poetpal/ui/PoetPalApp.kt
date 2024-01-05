@@ -26,7 +26,7 @@ import com.example.poetpal.navigation.navBarComposables.PoetTopBar
 import com.example.poetpal.ui.screens.AboutSidePanel
 import com.example.poetpal.ui.screens.DictionaryScreen
 import com.example.poetpal.ui.screens.HomeScreen
-import com.example.poetpal.ui.screens.ReadingScreen
+import com.example.poetpal.ui.screens.reading.ReadingScreen
 import com.example.poetpal.ui.screens.writing.WritingScreen
 import com.example.poetpal.ui.theme.PoetPalTheme
 import kotlinx.coroutines.launch

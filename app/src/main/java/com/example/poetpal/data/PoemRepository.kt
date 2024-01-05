@@ -5,11 +5,12 @@ import com.example.poetpal.data.database.PoemDao
 import com.example.poetpal.data.database.asDbPoem
 import com.example.poetpal.data.database.asDomainPoem
 import com.example.poetpal.domain.Poem
+import com.example.poetpal.domain.PoemMeta
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
 interface PoemRepository {
-    fun getPoemTitles(): Flow<List<String>>
+    fun getPoemMetas(): Flow<List<PoemMeta>>
 
     fun getPoemByTitle(title: String): Flow<Poem>
 
@@ -31,7 +32,7 @@ class LocalPoemRepository(private val poemDao: PoemDao, context: Context) : Poem
         return poemDao.getByTitle(title).map { it.asDomainPoem() }
     }
 
-    override fun getPoemTitles(): Flow<List<String>> {
-        return poemDao.getAll()
+    override fun getPoemMetas(): Flow<List<PoemMeta>> {
+        return poemDao.getAllMeta()
     }
 }

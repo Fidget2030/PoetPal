@@ -15,6 +15,7 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
+import com.example.poetpal.domain.Poem
 
 @Suppress("ktlint:standard:function-naming")
 fun limerick(
@@ -87,7 +88,10 @@ fun checkLimerickMeter(meter: List<String>) {
         throw java.lang.IllegalArgumentException("The meter in lines $incorrectMeters is incorrect.")
     }
 }
-
+@Composable
+fun Poem(poem: Poem){
+Poem(poem.text,poem.author)
+}
 @Suppress("ktlint:standard:function-naming")
 @Composable
 fun Poem(
