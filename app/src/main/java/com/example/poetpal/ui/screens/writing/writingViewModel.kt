@@ -12,6 +12,8 @@ import com.example.poetpal.data.PoemRepository
 import com.example.poetpal.data.SettingsRepository
 import com.example.poetpal.domain.Poem
 import com.example.poetpal.domain.Setting
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -24,6 +26,7 @@ class WritingViewModel(
     private val poemRepository: PoemRepository,
     // private val wordsRepository: WordsRepository,
 ) : ViewModel() {
+    private var debounceJob: Job? = null
     private val _writeState = MutableStateFlow(WritingScreenState())
     val writeState: StateFlow<WritingScreenState> = _writeState.asStateFlow()
     private val _poemState = MutableStateFlow(PoemState())
@@ -54,7 +57,17 @@ class WritingViewModel(
     ) {
         val newLines = poemState.value.lines.toMutableList()
         newLines[lineNr] = line
+        updateDebouncedLines(newLines)
         _poemState.update { currentState -> currentState.copy(lines = newLines) }
+    }
+
+    fun updateDebouncedLines(lines: List<String>) {
+        debounceJob?.cancel()
+        debounceJob =
+            viewModelScope.launch {
+                delay(3000)
+                _poemState.update { it.copy(debouncedLines = lines) }
+            }
     }
 
     fun setAuthor(author: String) {

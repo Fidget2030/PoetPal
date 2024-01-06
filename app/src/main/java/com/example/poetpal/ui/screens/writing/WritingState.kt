@@ -9,6 +9,7 @@ data class WritingScreenState(
 
 data class PoemState(
     val lines: List<String> = listOf("", "", "", "", ""),
+    val debouncedLines: List<String> = listOf("", "", "", "", ""),
     val words: List<List<Word>> = listOf(),
     val author: String = "",
     val title: String = "",

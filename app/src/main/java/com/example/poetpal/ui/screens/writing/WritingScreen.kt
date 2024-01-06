@@ -48,26 +48,31 @@ fun WritingScreen(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ) {
+        Text(text = poemState.debouncedLines[0])
         TextField(
             value = poemState.lines[0],
             onValueChange = { writingViewModel.updateLine(it, 0) },
             modifier = Modifier.padding(0.dp, 10.dp),
         )
+        Text(text = poemState.debouncedLines[1])
         TextField(
             value = poemState.lines[1],
             onValueChange = { writingViewModel.updateLine(it, 1) },
             modifier = Modifier.padding(0.dp, 10.dp),
         )
+        Text(text = poemState.debouncedLines[2])
         TextField(
             value = poemState.lines[2],
             onValueChange = { writingViewModel.updateLine(it, 2) },
             modifier = Modifier.padding(0.dp, 10.dp),
         )
+        Text(text = poemState.debouncedLines[3])
         TextField(
             value = poemState.lines[3],
             onValueChange = { writingViewModel.updateLine(it, 3) },
             modifier = Modifier.padding(0.dp, 10.dp),
         )
+        Text(text = poemState.debouncedLines[4])
         TextField(
             value = poemState.lines[4],
             onValueChange = { writingViewModel.updateLine(it, 4) },
