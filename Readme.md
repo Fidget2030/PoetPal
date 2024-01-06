@@ -25,3 +25,4 @@ links
 
 [Mirriam-Webster API](https://dictionaryapi.com/)  
 [ApiNinja Api](https://api-ninjas.com/profile)
+[datamuse API](https://www.datamuse.com/api/)
