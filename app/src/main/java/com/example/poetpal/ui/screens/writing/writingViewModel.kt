@@ -10,8 +10,11 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.poetpal.PoetPalApplication
 import com.example.poetpal.data.PoemRepository
 import com.example.poetpal.data.SettingsRepository
+import com.example.poetpal.data.WordsRepository
 import com.example.poetpal.domain.Poem
 import com.example.poetpal.domain.Setting
+import com.example.poetpal.domain.Word
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -24,8 +27,9 @@ import kotlinx.coroutines.launch
 class WritingViewModel(
     private val settingRepository: SettingsRepository,
     private val poemRepository: PoemRepository,
-    // private val wordsRepository: WordsRepository,
+    private val wordsRepository: WordsRepository,
 ) : ViewModel() {
+    lateinit var word: Word
     private var debounceJob: Job? = null
     private val _writeState = MutableStateFlow(WritingScreenState())
     val writeState: StateFlow<WritingScreenState> = _writeState.asStateFlow()
@@ -36,6 +40,10 @@ class WritingViewModel(
         Log.d("WritingVM", "init start")
         getSettings()
         Log.d("WritingVM", "init finish")
+        viewModelScope.launch(Dispatchers.IO) {
+            word = wordsRepository.getWord("apple")
+            Log.d("WritinVM", word.word)
+        }
     }
 
     private fun getSettings() {
@@ -46,7 +54,7 @@ class WritingViewModel(
                 _writeState.update { it.copy(showTutorial = setting.limerickTutorial) }
             } catch (e: Exception) {
                 Log.e("fetching settings", e.toString())
-                settingRepository.updateSettings(Setting(true))
+                settingRepository.insertSettings(Setting(true))
             }
         }
     }
@@ -113,10 +121,12 @@ class WritingViewModel(
                         val application = (this[APPLICATION_KEY] as PoetPalApplication)
                         val settingRepository = application.container.settingsRepository
                         val poemRepository = application.container.poemRepository
+                        val wordsRepository = application.container.wordsRepository
                         Instance =
                             WritingViewModel(
                                 settingRepository = settingRepository,
                                 poemRepository = poemRepository,
+                                wordsRepository = wordsRepository,
                             )
                     }
                     Instance!!

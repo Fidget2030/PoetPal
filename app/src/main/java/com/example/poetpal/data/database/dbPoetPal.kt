@@ -4,6 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.poetpal.domain.Poem
 import com.example.poetpal.domain.Setting
+import com.example.poetpal.domain.Word
 
 @Suppress("ktlint:standard:class-naming")
 @Entity(tableName = "settings")
@@ -32,7 +33,6 @@ data class dbPoem(
     val type: String?,
 )
 
-
 fun dbPoem.asDomainPoem(): Poem {
     return Poem(
         this.title,
@@ -50,4 +50,28 @@ fun Poem.asDbPoem(): dbPoem {
         author = this.author,
         type = this.type,
     )
+}
+
+@Suppress("ktlint:standard:class-naming")
+@Entity(tableName = "words")
+data class dbWord(
+    @PrimaryKey
+    val word: String,
+    val syllables: String,
+    val rhymes: String,
+    val related: String,
+)
+
+fun dbWord.asDomainWord(): Word {
+    val syllableList = syllables.split(",")
+    val rhymeList = rhymes.split(",")
+    val relatedList = related.split(",")
+    return Word(word, syllableList, rhymeList, relatedList)
+}
+
+fun Word.asdbWord(): dbWord {
+    val syllableString = syllables.joinToString(",")
+    val rhymeString = rhymes.joinToString(",")
+    val relatedString = related.joinToString(",")
+    return dbWord(word, syllableString, rhymeString, relatedString)
 }
