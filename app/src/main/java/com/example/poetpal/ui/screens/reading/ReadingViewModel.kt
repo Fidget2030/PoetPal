@@ -18,6 +18,14 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
+/**
+ * viewmodel for the reading screen
+ * @param poemRepository see [PoemRepository]
+ *
+ * @property _selectedPoemState keeps track of the currently selected poem
+ * @property selectedPoemState see [_selectedPoemState]
+ * @property metaState Hot Flow keeping track of poems in the roomDb
+ */
 class ReadingViewModel(
     private val poemRepository: PoemRepository,
 ) : ViewModel() {

@@ -1,7 +1,11 @@
 package com.example.poetpal.ui.utils
-
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
@@ -12,6 +16,7 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusDirection
 import androidx.compose.ui.graphics.Color
@@ -23,6 +28,7 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.poetpal.domain.Poem
 import com.example.poetpal.ui.screens.writing.PoemState
@@ -52,6 +58,21 @@ val bMeter =
         listOf("/"),
         listOf("(u)"),
     )
+
+@Suppress("ktlint:standard:function-naming")
+@Composable
+fun VerticalDivider(
+    modifier: Modifier = Modifier,
+    color: Color = Color.Black,
+    thickness: Dp = 1.dp,
+) {
+    Box(
+        modifier
+            .fillMaxHeight()
+            .width(thickness)
+            .background(color = color),
+    )
+}
 
 @Suppress("ktlint:standard:function-naming")
 fun limerick(
@@ -128,33 +149,42 @@ fun checkLimerickMeter(meter: List<String>) {
 @Suppress("ktlint:standard:function-naming")
 @Composable
 fun Poem(poem: Poem) {
-    Poem(poem.text, poem.author)
+    Poem(poem.title, poem.text, poem.author)
 }
 
 @Suppress("ktlint:standard:function-naming")
 @Composable
 fun Poem(
+    title: String = "",
     text: String,
     author: String,
 ) {
     ElevatedCard(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier.fillMaxWidth().padding(5.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 6.dp),
         colors =
             CardDefaults.cardColors(
                 containerColor = MaterialTheme.colorScheme.surfaceVariant,
             ),
     ) {
-        Text(
-            text =
-                text.trimMargin(),
-            textAlign = TextAlign.Center,
-        )
-        Text(
-            text = "- $author -".trimMargin(),
-            fontStyle = FontStyle.Italic,
-            textAlign = TextAlign.Center,
-        )
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Text(
+                text = title.trimMargin(),
+                textAlign = TextAlign.Center,
+                style = MaterialTheme.typography.headlineMedium,
+            )
+            Text(
+                text =
+                    text.trimMargin(),
+                textAlign = TextAlign.Center,
+                modifier = Modifier.padding(vertical = 5.dp),
+            )
+            Text(
+                text = "- $author -".trimMargin(),
+                fontStyle = FontStyle.Italic,
+                textAlign = TextAlign.Center,
+            )
+        }
     }
 }
 
