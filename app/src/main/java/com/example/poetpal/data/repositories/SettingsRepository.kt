@@ -1,4 +1,4 @@
-package com.example.poetpal.data
+package com.example.poetpal.data.repositories
 
 import android.content.Context
 import com.example.poetpal.data.database.SettingDao
@@ -16,7 +16,8 @@ interface SettingsRepository {
     suspend fun updateSettings(setting: Setting)
 }
 
-class LocalSettingRepository(private val settingDao: SettingDao, context: Context) : SettingsRepository {
+class LocalSettingRepository(private val settingDao: SettingDao, context: Context) :
+    SettingsRepository {
     override fun getSettings(): Flow<Setting> {
         return settingDao.getSettings().map {
             it.asDomainSetting()

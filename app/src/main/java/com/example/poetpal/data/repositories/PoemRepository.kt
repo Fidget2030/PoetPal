@@ -1,4 +1,4 @@
-package com.example.poetpal.data
+package com.example.poetpal.data.repositories
 
 import android.content.Context
 import com.example.poetpal.data.database.PoemDao

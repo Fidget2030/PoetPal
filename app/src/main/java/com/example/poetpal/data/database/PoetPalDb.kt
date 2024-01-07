@@ -6,8 +6,8 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 @Database(
-    entities = [dbSetting::class, dbPoem::class, dbWord::class],
-    version = 5,
+    entities = [DbSetting::class, DbPoem::class, DbWord::class],
+    version = 6,
     exportSchema = false
 )
 abstract class PoetPalDb : RoomDatabase() {

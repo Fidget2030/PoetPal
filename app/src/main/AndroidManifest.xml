@@ -18,6 +18,7 @@
         android:theme="@style/Theme.PoetPal"
         tools:targetApi="33">
         <activity
+            android:windowSoftInputMode="adjustResize|stateVisible"
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.PoetPal">

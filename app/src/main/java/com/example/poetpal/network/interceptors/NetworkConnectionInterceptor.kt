@@ -1,4 +1,4 @@
-package com.example.poetpal.network
+package com.example.poetpal.network.interceptors
 
 import android.content.Context
 import android.net.ConnectivityManager
