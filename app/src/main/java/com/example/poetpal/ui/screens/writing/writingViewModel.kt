@@ -233,7 +233,8 @@ class WritingViewModel(
      * line 1,2,5 8-11 syllables
      * line 3,4: 5-7 syllables
      */
-    private fun annotateSyllables() {
+
+    private fun annotateSyllables() { // this one is a beauty, if I may say so myself :)
         val syllables = poemState.value.syllables
         val annotatedStrings: MutableList<AnnotatedString> = mutableListOf()
         val lineLengths = syllables.map { it.flatten().size }
@@ -253,20 +254,20 @@ class WritingViewModel(
                                 run {
                                     val maxLength = 20
                                     if ((
-                                                lineLengths[lineNr] > 9 && i in
-                                                        listOf(
-                                                            4,
-                                                            10,
-                                                            16,
-                                                        )
-                                                ) || (
-                                                lineLengths[lineNr] < 10 && i in
-                                                        listOf(
-                                                            2,
-                                                            8,
-                                                            14,
-                                                        )
+                                            lineLengths[lineNr] > 9 && i in
+                                                listOf(
+                                                    4,
+                                                    10,
+                                                    16,
                                                 )
+                                        ) || (
+                                            lineLengths[lineNr] < 10 && i in
+                                                listOf(
+                                                    2,
+                                                    8,
+                                                    14,
+                                                )
+                                        )
                                     ) {
                                         withStyle(SpanStyle(fontWeight = FontWeight.Bold)) {
                                             append(
@@ -289,12 +290,12 @@ class WritingViewModel(
                             run {
                                 val maxLength = 12
                                 if ((
-                                            lineLengths[lineNr] > 6 && i in
-                                                    listOf(
-                                                        4,
-                                                        10,
-                                                    )
-                                            ) || (lineLengths[lineNr] < 7 && i in listOf(2, 8))
+                                        lineLengths[lineNr] > 6 && i in
+                                            listOf(
+                                                4,
+                                                10,
+                                            )
+                                    ) || (lineLengths[lineNr] < 7 && i in listOf(2, 8))
                                 ) {
                                     withStyle(SpanStyle(fontWeight = FontWeight.Bold)) {
                                         append(
@@ -322,9 +323,10 @@ class WritingViewModel(
     /**
      * builds the message informing a unknown word was detected, and proposing alternatives.
      *
-     * see [saveAlternatives]
+     *see [saveAlternatives]
      */
     fun snackBarMessage(): String {
+        // TODO: create an "addToDictionary" dialog and add action button to snackBar
         val sb = StringBuilder()
 
         val unknowns = writeState.value.unknownWords
@@ -366,13 +368,13 @@ class WritingViewModel(
                 lines = listOf("", "", "", "", ""),
                 syllables = listOf(),
                 annotatedLines =
-                listOf(
-                    AnnotatedString(""),
-                    AnnotatedString(""),
-                    AnnotatedString(""),
-                    AnnotatedString(""),
-                    AnnotatedString(""),
-                ),
+                    listOf(
+                        AnnotatedString(""),
+                        AnnotatedString(""),
+                        AnnotatedString(""),
+                        AnnotatedString(""),
+                        AnnotatedString(""),
+                    ),
                 author = "",
                 title = "",
                 type = "",
