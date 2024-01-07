@@ -23,5 +23,5 @@ links
 [Figma](https://www.figma.com/file/3JX4nnQx7dOePENrn0jEdc/Poet-Pal?type=design&node-id=54695-114&mode=design&t=L6uJ0UxpABSwovrk-0)  
 [Mirriam-Webster API](https://dictionaryapi.com/)  
 [ApiNinja Api](https://api-ninjas.com/profile)  
-[datamuse API](https://www.datamuse.com/api/)
+[datamuse API](https://www.datamuse.com/api/)  
 [Limerick structure](https://whvvugt.home.xs4all.nl/Archives_TCCMB/Limericks/Structure.html)
