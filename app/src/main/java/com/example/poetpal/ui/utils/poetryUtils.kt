@@ -160,14 +160,14 @@ fun Poem(
     author: String,
 ) {
     ElevatedCard(
-        modifier = Modifier.fillMaxWidth().padding(5.dp),
+        modifier = Modifier.padding(5.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 6.dp),
         colors =
             CardDefaults.cardColors(
                 containerColor = MaterialTheme.colorScheme.surfaceVariant,
             ),
     ) {
-        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
             Text(
                 text = title.trimMargin(),
                 textAlign = TextAlign.Center,
