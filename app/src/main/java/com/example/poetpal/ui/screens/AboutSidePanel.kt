@@ -12,6 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 
+// TODO: turn into a poetry 101 wiki
 @OptIn(ExperimentalMaterial3Api::class)
 @Suppress("ktlint:standard:function-naming")
 @Composable
@@ -19,27 +20,27 @@ fun AboutSidePanel(toggleSidePanel: () -> Unit) {
     Column {
         CenterAlignedTopAppBar(
             colors =
-            TopAppBarDefaults.topAppBarColors(
-                containerColor = MaterialTheme.colorScheme.primaryContainer,
-                titleContentColor = MaterialTheme.colorScheme.primary,
-            ),
+                TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.primaryContainer,
+                    titleContentColor = MaterialTheme.colorScheme.primary,
+                ),
             title = { Text("Help") },
             actions = {
                 IconButton(onClick = toggleSidePanel) {
-                    Icon(imageVector = Icons.Filled.Close, contentDescription = "Close sidepanel")
+                    Icon(imageVector = Icons.Filled.Close, contentDescription = "Close sidePanel")
                 }
             },
         )
         Text(
             text =
-            """Poetry is set apart from other forms of literature in how it plays with language.
-                |Some forms of poetry are very free-flowing, and showcast creative uses,
+                """Poetry is set apart from other forms of literature in how it plays with language.
+                |Some forms of poetry are very free-flowing, and showcase creative uses,
                 |but this can be challenging for someone just beginning. 
                 |"Blank Page Syndrome" refers to the problem many have with having too much freedom,
                 | and not knowing where to begin.
                 |Some more structured forms of poetry can help you on your way, and stimulate you to think creatively.
             """
-                .trimMargin(),
+                    .trimMargin(),
         )
     }
 }

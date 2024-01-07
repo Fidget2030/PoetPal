@@ -75,7 +75,7 @@ private val darkScheme =
 fun PoetPalTheme(
     useDarkTheme: Boolean = isSystemInDarkTheme(),
     content:
-        @Composable()
+        @Composable
         () -> Unit,
 ) {
     val colors =
@@ -88,5 +88,6 @@ fun PoetPalTheme(
     MaterialTheme(
         colorScheme = colors,
         content = content,
+        typography = Typography,
     )
 }

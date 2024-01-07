@@ -240,7 +240,7 @@ class WritingViewModel(
         val lineLengths = syllables.map { it.flatten().size }
         val syllableLists =
             syllables.map { line ->
-                line.map { syllable -> syllable.joinToString(",*,") }.joinToString(", ,").split(",")
+                line.joinToString(", ,") { syllable -> syllable.joinToString(",*,") }.split(",")
             }
         syllableLists.forEachIndexed {
                 lineNr,
@@ -405,9 +405,9 @@ class WritingViewModel(
     }
 
     /**
-     * companion object holding the factory to initialize the viewmodel
-     * it fetches the repositories bound to the applicationcontainer via the context,
-     * and passes them to the viewmodel
+     * companion object holding the factory to initialize the viewModel
+     * it fetches the repositories bound to the applicationContainer via the context,
+     * and passes them to the viewModel
      */
     companion object {
         @Suppress("ktlint:standard:property-naming")

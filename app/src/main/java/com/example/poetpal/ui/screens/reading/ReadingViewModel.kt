@@ -19,7 +19,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 /**
- * viewmodel for the reading screen
+ * viewModel for the reading screen
  * @param poemRepository see [PoemRepository]
  *
  * @property _selectedPoemState keeps track of the currently selected poem
@@ -34,9 +34,7 @@ class ReadingViewModel(
     lateinit var metaState: StateFlow<MetaState>
 
     init {
-        Log.i("readingVM", " start getmetas")
         getMetas()
-        Log.i("readingVM", "getmetas success")
     }
 
     private fun getMetas() {

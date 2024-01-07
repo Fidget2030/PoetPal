@@ -6,5 +6,5 @@ import androidx.compose.runtime.Composable
 @Suppress("ktlint:standard:function-naming")
 @Composable
 fun DictionaryScreen() {
-    Text("This will be the dictionary screen")
+    Text("Coming soon to an app near you!")
 }

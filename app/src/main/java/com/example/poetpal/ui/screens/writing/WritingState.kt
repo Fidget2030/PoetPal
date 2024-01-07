@@ -4,7 +4,6 @@ import androidx.compose.ui.text.AnnotatedString
 import com.example.poetpal.ui.utils.aMeter
 import com.example.poetpal.ui.utils.bMeter
 
-
 data class WritingScreenState(
     val showTutorial: Boolean = true,
     val showSaveDialog: Boolean = false,

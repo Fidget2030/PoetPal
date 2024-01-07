@@ -20,6 +20,7 @@ import com.example.poetpal.ui.theme.PoetPalTheme
 import com.example.poetpal.ui.utils.Poem
 import com.example.poetpal.ui.utils.limerick
 
+// TODO: move this to limerick tutorial dialog, design interesting home page ->brainstorm required
 @Suppress("ktlint:standard:function-naming")
 @Composable
 fun HomeScreen(
@@ -48,10 +49,10 @@ fun HomeScreen(
 
     Column(
         modifier =
-        Modifier
-            .fillMaxSize()
-            .padding(10.dp)
-            .verticalScroll(rememberScrollState()),
+            Modifier
+                .fillMaxSize()
+                .padding(10.dp)
+                .verticalScroll(rememberScrollState()),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Poem(
@@ -67,7 +68,7 @@ fun HomeScreen(
 
         Text(
             text =
-            """A limerick has 5 lines.
+                """A limerick has 5 lines.
 The lines rhyme according to an AABBA scheme.
 Lines 1,2 and 5 are an anapestic trimeter,
 lines 3 and 4 are an anapestic dimeter

@@ -20,7 +20,7 @@ class NetworkConnectionInterceptor(val context: Context) : Interceptor {
             }
         }
 
-    fun isConnected(context: Context): Boolean {
+    private fun isConnected(context: Context): Boolean {
         val result: Boolean
         val connectivityManager =
             context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
